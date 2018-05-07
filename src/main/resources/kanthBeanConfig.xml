@@ -26,4 +26,23 @@
 		<constructor-arg name="exp" value="3"></constructor-arg>
 	</bean>
 
+	<bean name="comp" class="org.kanth.Spring.bo.CompanyBean">
+		<property name="empbean" ref="emp">
+		</property>
+		<property name="compid" value="iadmin"></property>
+	</bean>
+
+
+
+
+	<bean name="empproto" class="org.kanth.Spring.bo.EmpProBean"
+		scope="prototype">
+		<constructor-arg name="empid" value="999"></constructor-arg>
+		<constructor-arg name="name" value="Kanth"></constructor-arg>
+	</bean>
+
+	<bean name="compbean" class="org.kanth.Spring.bo.CompBean">
+		<property name="compid" value="4353"></property>
+		<property name="empbean" ref="empproto"></property>
+	</bean>
 </beans>

@@ -1,5 +1,6 @@
 package org.kanth.Spring.start;
 
+import org.kanth.Spring.bo.CompanyBean;
 import org.kanth.Spring.bo.EmployeeBean;
 import org.kanth.Spring.bo.PersonBean;
 import org.springframework.context.ApplicationContext;
@@ -19,14 +20,17 @@ public class SpringTest1 {
 			ctx = new ClassPathXmlApplicationContext("classpath:app-context.xml");
 			PersonBean pb = ctx.getBean("personBean", PersonBean.class);
 			EmployeeBean empbeam = ctx.getBean("emp", EmployeeBean.class);
+			CompanyBean compbean=ctx.getBean("comp",CompanyBean.class);
 			System.out.println(pb);
 			System.out.println(empbeam);
+			System.out.println(compbean);
+			
 
 		} catch (Exception e) {
 			System.err.println(e);
 		} finally {
 			if (null != ctx) {
-				ctx = null;
+				((ClassPathXmlApplicationContext)ctx).close();
 			}
 		}
 
