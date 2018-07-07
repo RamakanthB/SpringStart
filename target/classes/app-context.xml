@@ -6,5 +6,6 @@
 
 
 <import resource="classpath*:kanthBeanConfig.xml"/>
+<!-- <import resource="classpath*:aspectBeanConfig.xml"/> -->
 
 </beans>

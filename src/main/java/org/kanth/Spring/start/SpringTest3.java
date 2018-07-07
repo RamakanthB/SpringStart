@@ -11,9 +11,10 @@ public class SpringTest3 {
 
 		ApplicationContext ctx = null;
 		try {
-			ctx = new AnnotationConfigApplicationContext(BeanConfig.class);
+			 ctx = new AnnotationConfigApplicationContext(BeanConfig.class);
 			CompJavaBean comp = ctx.getBean(CompJavaBean.class);
 			System.out.println(comp);
+			comp.getEmpBean();
 
 		} catch (Exception e) {
 			System.err.println(e);
